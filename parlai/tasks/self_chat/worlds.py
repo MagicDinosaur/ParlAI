@@ -64,7 +64,7 @@ def load_openers_from_file(filepath: str) -> List[str]:
     return openers
 
 
-class SelfChatWorld(DialogPartnerWorld):
+class SelfChatWorld(MultiAgentDialogWorld):
     def __init__(self, opt, agents, shared=None):
         super().__init__(opt, agents, shared)
         self.init_contexts(shared=shared)

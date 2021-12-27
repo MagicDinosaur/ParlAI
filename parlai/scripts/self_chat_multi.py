@@ -130,13 +130,8 @@ def self_chat(opt):
     agent0 = create_agent(opt, requireModelExists=True)
     agent0.opt.log("Agent 1 Opt")
     if partner1 is None or partner2 is None:
-        if partner1 is None:
-          agent1 = agent0.clone()
-        elif partner2 is None:
-          agent2 = agent0.clone()
-        else:
-          agent1 = agent0.clone()
-          agent2 = agent0.clone()
+        agent1 = agent0.clone()
+        agent2 = agent0.clone()
     else:
         # Self chat with different models
         if partner_opt_file_01:
