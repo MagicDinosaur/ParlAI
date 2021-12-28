@@ -86,7 +86,7 @@ class SelfChatWorld(MultiAgentDialogWorld):
 
         This function will be called before the first turn of every episode.
         """
-        return ['Hi!', '']
+        return ['Hi!', '','']
 
     def init_openers(self) -> None:
         """
@@ -151,9 +151,9 @@ class SelfChatWorld(MultiAgentDialogWorld):
         self.seed_utterances = self._get_seed_utt_acts(self.episode_cnt, self.agents)
 
         if self.contexts:
-            assert len(self.contexts) == 2
+            assert len(self.contexts) == 3
             # initial context
-            for i in range(0, 2):
+            for i in range(0, 3):
                 context = Message(
                     {'text': self.contexts[i], 'episode_done': False, 'id': 'context'}
                 )
@@ -163,10 +163,10 @@ class SelfChatWorld(MultiAgentDialogWorld):
             self.contexts = None
         elif self.seed_utterances:
             # pop the next two seed messages (there may be less or more than 2 total)
-            utts = self.seed_utterances[:2]
-            self.seed_utterances = self.seed_utterances[2:]
+            utts = self.seed_utterances[:3]
+            self.seed_utterances = self.seed_utterances[3:]
             # process the turn
-            for i in [0, 1]:
+            for i in [0, 1,2]:
                 # if we have a seed utterance, add it to the conversation
                 if len(utts) > i:
                     self.acts[i] = utts[i]
