@@ -166,7 +166,7 @@ class SelfChatWorld(MultiAgentDialogWorld):
             utts = self.seed_utterances[:3]
             self.seed_utterances = self.seed_utterances[3:]
             # process the turn
-            for i in [0, 1,2]:
+            for i in [0, 1, 2]:
                 # if we have a seed utterance, add it to the conversation
                 if len(utts) > i:
                     self.acts[i] = utts[i]
